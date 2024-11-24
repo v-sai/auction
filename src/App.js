@@ -13,7 +13,7 @@ import AuthPin from "./components/AuthPin";
 
 function App() {
   const [isAuthorized, setIsAuthorized] = useState(false);
-  const correctPin = "123";
+  const correctPin = "@nil";
   const handleAuthorization = () => {
     setIsAuthorized(true);
   };
