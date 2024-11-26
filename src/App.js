@@ -20,7 +20,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Auction2025</h1>
+        <h1 className="head_title" style={{textAlign:"center"}}>Auction2025</h1>
         <Routes>
           <Route path="/" element={<PlayersList />} />
 

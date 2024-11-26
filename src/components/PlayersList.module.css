@@ -1,63 +1,161 @@
+/* Container */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: scroll;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 99vw;
+}
 
+/* Heading */
+.heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+/* Filters Section */
+.filters {
+  display: flex;
+  flex-direction: row; /* Stack filters on smaller screens */
+  gap: 15px; /* Add spacing between filter sections */
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem 0 1rem;
+}
+
+.searchInput {
+  width: 100%; 
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.filters input,
+.filters select {
+  padding: 7.5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.right_filters {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.right_filters > p {
+  font-weight: 600;
+  color: #555555;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px; /* Smaller font size for mobile */
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table tr:hover {
+  background-color: #ddd;
+}
+
+/* No Data, Error, and Loading Messages */
+.noData,
+.error,
+.loading {
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+  margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
-  
+
   .heading {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 20px;
   }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
+
+  .filters {
+    flex-direction: column; /* Stack filters vertically */
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  .right_filters {
+    flex-direction: column; /* Stack the dropdowns vertically */
+    width: 95vw; /* Full width for better usability */
+    align-items: flex-start;
+  }
+
+  .right_filters select,
+  .searchInput {
+    width: 95vw; /* Full width on mobile */
+  }
+
+  .tableWrapper {
+    overflow-x: auto; /* Enable horizontal scroll */
     margin-top: 20px;
   }
-  
+
+  .table {
+    font-size: 12px; /* Slightly smaller font for table */
+    min-width: 42rem;
+    width: 100%;
+    overflow-x: scroll;
+  }
+
   .table th,
   .table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
+    padding: 8px; /* Reduce padding for smaller screens */
   }
-  
-  .table th {
-    background-color: #4caf50;
-    color: white;
+
+  .filters input,
+  .filters select {
+    font-size: 14px; /* Adjust font size for inputs and dropdowns */
   }
-  
-  .table tr:nth-child(even) {
-    background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 480px) {
+  .heading {
+    font-size: 18px; /* Smaller heading for very small screens */
   }
-  
-  .table tr:hover {
-    background-color: #ddd;
+
+  .table th,
+  .table td {
+    font-size: 12px;
+    padding: 5px; /* Reduce padding further for narrow screens */
   }
-  
-  .noData {
-    text-align: center;
-    font-size: 18px;
-    color: #666;
-    margin-top: 20px;
+
+  .filters input,
+  .filters select {
+    font-size: 12px; /* Smaller font size for inputs and dropdowns */
   }
-  
-  .error {
-    text-align: center;
-    font-size: 18px;
-    color: red;
-  }
-  
-  .loading {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-  }
-  
+}
